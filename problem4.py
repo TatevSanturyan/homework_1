@@ -1,15 +1,4 @@
-from datetime import datetime
-from time import sleep
-
-def timer(func):
-    def wrapper(*args,**kwargs):
-        start = datetime.now()
-        res = func(*args,**kwargs)
-        print(start,func, datetime.now() - start)
-
-        return res
-    return wrapper
-
+from decorators import timer
 
 @timer
 def factorial(x):
@@ -18,5 +7,5 @@ def factorial(x):
         res *= i
     return res
 
-print(factorial(100))
+print(factorial(15))
 
