@@ -1,12 +1,28 @@
-def indices(nums, target):
+def indices_sum(nums, target):
     for i in range(len(nums)):
         for j in range(i + 1, len(nums)):
             if nums[i] + nums[j] == target:
-                return [i, j]
-            else:
-                return "no pair in nums list sums to target"
+                return nums[i], nums[j]
 
-nums = [2, 5, 3, 7, 3, 8]
 
-target = 7
-print(indices(nums, target))
+nums = [1, 2, 3, 4, 5]
+target = 6
+print(indices_sum(nums, target))
+
+
+def sumOfTwo(array, target):
+    i = 0
+    j = len(array) - 1
+    while i < j:
+      add = array[i] + array[j]
+      if add == target:
+        return array[i],array[j]
+      elif add < target:
+        i += 1
+      else:
+        j -= 1
+    return 'None'
+
+array = [12,15,10,2,4,7]
+target = 14
+print(sumOfTwo(array, target))
